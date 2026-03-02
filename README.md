@@ -42,33 +42,63 @@ sqlalchemy (v2.x)
 
 
 Repo Structure (will be organized to include a csv folder)
+
 ├── FREDScrape.ipynb
+
 │   - Pulls S&P 500 price data from FRED API
+
 │   - Computes daily returns and rolling volatility
+
 │   - Identifies stress days (top 10% volatility)
+
 │   - Outputs stress_days.csv
+
 │
 ├── YahooScrape.ipynb
+
 │   - Scrapes Yahoo Finance to identify large publicly traded firms
+
 │   - Outputs firm_list.csv
+
 │
+
 ├── WRDSReturns.ipynb
+
 │   - Connects to WRDS via Python API
+
 │   - Downloads CRSP daily stock return data for selected firms
+
 │
+
 ├── OwnershipNetwork.ipynb
+
 │   - Downloads institutional ownership data (13F) from WRDS
+
 │   - Constructs firm–institution bipartite network
+
 │   - Projects to firm–firm ownership overlap network
+
 │   - Computes stress-period pairwise return correlations
+
 │   - Runs regression analysis and produces visualizations
+
 │
+
 ├── firm_list.csv
+
 │   - List of selected firms
+
 │
+
 ├── stress_days.csv
+
 │   - Identified market stress days
+
 │
+
 └── stress_volatility_institutional_data2.csv
+
     - Combined dataset of stress-day returns and institutional ownership
+    
     - Not uploaded to GitHub due to file size constraints
+    
