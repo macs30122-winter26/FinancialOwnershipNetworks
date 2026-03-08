@@ -12,6 +12,8 @@ The ownership network is constructed quarterly. Institutional ownership is first
 
 Data
 
+https://drive.google.com/file/d/1vXQcLQpSGGNIS24nMEn8QuOV-jyrpOts/view?usp=sharing
+
 Yahoo Finance (List of Large Public Firms)
 Link: https://finance.yahoo.com/
 Method: Web scraping (via Jupyter notebook YahooScrape.ipynb)
