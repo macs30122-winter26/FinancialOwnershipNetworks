@@ -81,26 +81,26 @@ Generated datasets stored in the repository include:
 final-project-mint/
 │
 ├── Data Collection and Processing/
-│ ├── YahooScrape.ipynb
-│ ├── FREDScrape.ipynb
-│ └── WRDSReturns.ipynb
+│   ├── YahooScrape.ipynb
+│   ├── FREDScrape.ipynb
+│   └── WRDSReturns.ipynb
 │
 ├── Data Analysis/
-│ ├── OwnershipNetwork.ipynb
-│ └── NonStressNetwork.ipynb
+│   ├── OwnershipNetwork.ipynb
+│   └── NonStressNetwork.ipynb
 │
 ├── Mint Data/
-│ ├── link to str_vol_institutional_data.csv
-│ ├── stress_days.csv
-│ └── firm_list.csv
+│   ├── str_vol_institutional_data.csv
+│   ├── stress_days.csv
+│   └── firm_list.csv
 │
 ├── Mint Slides/
-│ ├── Mint1.pdf
-│ └── Mint2.pdf
+│   ├── Mint1.pdf
+│   └── Mint2.pdf
 │
 ├── Project Check Ins/
-│ ├── Project Check In2.pdf
-│ └── Week 5 Check In.pdf
+│   ├── Project Check In2.pdf
+│   └── Week 5 Check In.pdf
 │
 └── README.md
 
