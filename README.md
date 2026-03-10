@@ -1,87 +1,166 @@
-Institutional Ownership Networks and Stock Return Comovement During Market Stress 
-Varshini Narayanan
+# Institutional Ownership Networks and Stock Return Comovement During Market Stress
 
-Project Description
+**Author:** Varshini Narayanan
 
-This project studies whether firms that share large institutional investors exhibit stronger stock return comovement during periods of market stress. The research question is:
-Do stocks held by the same large institutional investors move together more during periods of elevated market volatility?
-The project focuses on a sample of 20 large U.S. publicly traded firms. Institutional ownership is modeled as a network in which firms are connected if they share common institutional shareholders. The strength of the connection between two firms is measured using weighted ownership overlap derived from SEC Form 13F filings.
-Market stress is identified using realized volatility constructed from daily S&P 500 returns. Days in the top 10% of the volatility distribution are classified as stress days. For each quarter, pairwise stock return correlations are computed using daily returns during these stress periods. These correlations measure the degree of comovement between firm pairs when markets experience large shocks.
-The ownership network is constructed quarterly. Institutional ownership is first represented as a bipartite network between firms and institutions. This is then projected into a firm–firm weighted network using matrix multiplication, where the weight reflects the degree of shared institutional ownership. The empirical analysis examines whether greater ownership overlap is associated with higher stress period return correlations. The results show a positive and statistically significant relationship between ownership overlap and return comovement during stress, consistent with my hypothesis that institutional ownership networks amplify comovement in turbulent market conditions. THis is also calculated during non stress periods 
+---
 
+# Project Description
 
-Data
+## Summary
 
+This project studies whether firms that share large institutional investors exhibit stronger stock return comovement during periods of market stress.
 
-Yahoo Finance (List of Large Public Firms)
-Link: https://finance.yahoo.com/
-Method: Web scraping (via Jupyter notebook YahooScrape.ipynb)
-Purpose: Construct list of 20 large U.S. publicly traded firms.
-FRED (Federal Reserve Economic Data)
-Link: https://fred.stlouisfed.org/
-Method: API access (via FREDScrape.ipynb)
-Purpose: Download daily S&P 500 prices to compute realized volatility and identify stress days. Output stored as stress_days.csv.
-WRDS (Wharton Research Data Services)
-Link: https://wrds-www.wharton.upenn.edu/
-Method: Python WRDS API (via WRDSReturns.ipynb and OwnershipNetwork.ipynb)
-Purpose:
-CRSP daily stock returns for selected firms
-Institutional ownership data from SEC Form 13F filings (Thomson Reuters S34 dataset)
+The core research question is:
 
+**Do stocks held by the same large institutional investors move together more during periods of elevated market volatility?**
 
-Libraries:
+Key elements of the project:
 
-pandas (v2.x)
-numpy (v1.x)
-matplotlib (v3.x)
-seaborn (v0.x)
-statsmodels (v0.x)
-networkx (v3.x)
-wrds (v3.x)
-sqlalchemy (v2.x)
+- A sample of 20 large U.S. publicly traded firms is constructed using Yahoo Finance.
+- Institutional ownership is modeled as a network, where firms are connected if they share common institutional investors.
+- The strength of the connection between firms is measured using weighted ownership overlap derived from SEC Form 13F filings.
+- Market stress is identified using realized volatility calculated from daily S&P 500 returns.
+- Days in the top 10% of the volatility distribution are classified as stress days.
+- For each quarter, pairwise stock return correlations are calculated using daily returns during stress periods to measure comovement.
 
+The ownership network is constructed quarterly:
 
+1. Institutional ownership is first represented as a bipartite network between firms and institutions.
+2. This network is then projected into a firm–firm weighted network** using matrix multiplication.
+3. Edge weights represent the degree of shared institutional ownership between firms.
 
-Repo Structure (will be organized to include a csv folder)
+Empirical analysis tests whether greater ownership overlap is associated with higher return correlations during stress periods.
 
-├── FREDScrape.ipynb
-│   - Pulls S&P 500 price data from FRED API
-│   - Computes daily returns and rolling volatility
-│   - Identifies stress days (top 10% volatility)
-│   - Outputs stress_days.csv
+Results show a positive and statistically significant relationship between ownership overlap and return comovement during stress periods, supporting the hypothesis that institutional ownership networks amplify comovement during turbulent market conditions.
+
+Additional analysis during non-stress periods shows that institutional ownership overlap also increases stock return correlations when volatility is low, but the magnitude of the effect increases substantially as market volatility rises, indicating that shared institutional ownership contributes more strongly to comovement during market stress.
+
+---
+
+## Additional Info
+
+| File                   | Lines of Code |
+| ---------------------- | ------------- |
+| YahooScrape.ipynb      | 51            |
+| FREDScrape.ipynb       | 66            |
+| WRDSReturns.ipynb      | 115           |
+| OwnershipNetwork.ipynb | 436           |
+| NonStressNetwork.ipynb | 102           |
+
+Total lines of code: 770 (including comments)
+
+**Methods and Analysis:**
+
+- Network construction from institutional ownership data
+- Pairwise stock return correlation analysis
+- Volatility classification using realized S&P 500 volatility
+- Linear regression analysis controlling for industry effects
+
+**Project strength:**  
+A major strength of this project is the **network-based modeling of institutional ownership**, which allows the analysis to capture interconnected ownership structures across firms and link them directly to stock return dynamics.
+
+---
+
+# Data
+
+| Source | Link | Collection Method | Purpose |
+|------|------|------|------|
+| Yahoo Finance | https://finance.yahoo.com/ | Web scraping via `YahooScrape.ipynb` | Construct list of 20 large U.S. publicly traded firms |
+| FRED (Federal Reserve Economic Data) | https://fred.stlouisfed.org/ | API via `FREDScrape.ipynb` | Download daily S&P 500 prices to compute realized volatility and identify stress days |
+| WRDS (Wharton Research Data Services) | https://wrds-www.wharton.upenn.edu/ | Python WRDS API via `WRDSReturns.ipynb` and `OwnershipNetwork.ipynb` | Obtain CRSP daily stock returns and institutional ownership data from SEC Form 13F filings (Thomson Reuters S34 dataset) |
+
+Generated datasets stored in the repository include:
+
+- `firm_list.csv` – list of selected firms
+- `stress_days.csv` – identified market stress days
+- `str_vol_institutional_data.csv` – merged dataset used for analysis
+
+---
+
+# Repository Structure
+final-project-mint/
 │
-├── YahooScrape.ipynb
-│   - Scrapes Yahoo Finance to identify large publicly traded firms
-│   - Outputs firm_list.csv
+├── Data Collection and Processing/
+│ ├── YahooScrape.ipynb
+│ ├── FREDScrape.ipynb
+│ └── WRDSReturns.ipynb
 │
-├── WRDSReturns.ipynb
-│   - Connects to WRDS via Python API
-│   - Downloads CRSP daily stock return data for selected firms
+├── Data Analysis/
+│ ├── OwnershipNetwork.ipynb
+│ └── NonStressNetwork.ipynb
 │
-├── OwnershipNetwork.ipynb
-│   - Downloads institutional ownership data (13F) from WRDS
-│   - Constructs firm–institution bipartite network
-│   - Projects to firm–firm ownership overlap network
-│   - Computes stress-period pairwise return correlations
-│   - Runs regression analysis and produces visualizations
+├── Mint Data/
+│ ├── link to str_vol_institutional_data.csv
+│ ├── stress_days.csv
+│ └── firm_list.csv
 │
+├── Mint Slides/
+│ ├── Mint1.pdf
+│ └── Mint2.pdf
+│
+├── Project Check Ins/
+│ ├── Project Check In2.pdf
+│ └── Week 5 Check In.pdf
+│
+└── README.md
 
 
---NonStressNetwork.ipynb
-mint data (folder)
-------------├── firm_list.csv
-│   - List of selected firms
-│
-----------├── stress_days.csv
-│   - Identified market stress days
-│
-└------ -----── stress_volatility_institutional_data2.csv
-    - Combined dataset of stress-day returns and institutional ownership
-    - Uploaded as link due to file size constraints
-mint slides (folder)
-------------- mint 1
---------------mint 2
+### Folder descriptions
 
+- **Data Collection and Processing/** – scripts used to scrape, download, and prepare raw data sources.
+- **Data Analysis/** – notebooks performing ownership network construction, return correlation analysis, and regression analysis.
+- **Mint Data/** – processed datasets used in the final analysis.
+- **Mint Slides/** – presentation slides for the project.
+- **Project Check Ins/** – project progress reports and check-in documentation.
 
-    
-    
+---
+
+# Libraries
+
+| Library | Version |
+|------|------|
+| pandas | 2.x |
+| numpy | 1.x |
+| matplotlib | 3.x |
+| seaborn | 0.x |
+| statsmodels | 0.x |
+| networkx | 3.x |
+| wrds | 3.x |
+| sqlalchemy | 2.x |
+| requests | latest |
+| beautifulsoup4 | latest |
+| yfinance | latest |
+
+---
+
+# Contributions
+
+**Varshini Narayanan**
+
+This project was completed individually. Responsibilities included:
+
+- Designing the research question and empirical strategy
+- Collecting firm lists via Yahoo Finance scraping (`YahooScrape.ipynb`)
+- Downloading and processing market volatility data from FRED (`FREDScrape.ipynb`)
+- Extracting CRSP returns and institutional ownership data through WRDS (`WRDSReturns.ipynb`)
+- Constructing the institutional ownership network (`OwnershipNetwork.ipynb`)
+- Performing correlation and regression analysis for stress and non-stress periods (`OwnershipNetwork.ipynb`, `NonStressNetwork.ipynb`)
+- Creating visualizations and tables
+- Preparing presentation slides and project documentation
+
+Each notebook includes author information, description, and AI disclosure where applicable.
+
+---
+
+# AI Usage Statement
+
+AI tools were used in limited ways to assist with formatting and coding efficiency.
+
+**ChatGPT**
+
+- Assisted with formatting tables and improving documentation structure.
+- Helped format regression output tables in `NonStressNetwork.ipynb`.
+- Assisted with visualization formatting in `FREDScrape.ipynb`.
+- Helped structure and format the project README.
+
+All analytical design, data collection, econometric analysis, and interpretation of results were completed by the author. AI tools were used only as supportive aids for formatting or minor coding assistance.
