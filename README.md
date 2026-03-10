@@ -7,12 +7,11 @@ This project studies whether firms that share large institutional investors exhi
 Do stocks held by the same large institutional investors move together more during periods of elevated market volatility?
 The project focuses on a sample of 20 large U.S. publicly traded firms. Institutional ownership is modeled as a network in which firms are connected if they share common institutional shareholders. The strength of the connection between two firms is measured using weighted ownership overlap derived from SEC Form 13F filings.
 Market stress is identified using realized volatility constructed from daily S&P 500 returns. Days in the top 10% of the volatility distribution are classified as stress days. For each quarter, pairwise stock return correlations are computed using daily returns during these stress periods. These correlations measure the degree of comovement between firm pairs when markets experience large shocks.
-The ownership network is constructed quarterly. Institutional ownership is first represented as a bipartite network between firms and institutions. This is then projected into a firm–firm weighted network using matrix multiplication, where the weight reflects the degree of shared institutional ownership. The empirical analysis examines whether greater ownership overlap is associated with higher stress period return correlations. The results show a positive and statistically significant relationship between ownership overlap and return comovement during stress, consistent with my hypothesis that institutional ownership networks amplify comovement in turbulent market conditions.
+The ownership network is constructed quarterly. Institutional ownership is first represented as a bipartite network between firms and institutions. This is then projected into a firm–firm weighted network using matrix multiplication, where the weight reflects the degree of shared institutional ownership. The empirical analysis examines whether greater ownership overlap is associated with higher stress period return correlations. The results show a positive and statistically significant relationship between ownership overlap and return comovement during stress, consistent with my hypothesis that institutional ownership networks amplify comovement in turbulent market conditions. THis is also calculated during non stress periods 
 
 
 Data
 
-https://drive.google.com/file/d/1vXQcLQpSGGNIS24nMEn8QuOV-jyrpOts/view?usp=sharing
 
 Yahoo Finance (List of Large Public Firms)
 Link: https://finance.yahoo.com/
@@ -66,13 +65,23 @@ Repo Structure (will be organized to include a csv folder)
 │   - Computes stress-period pairwise return correlations
 │   - Runs regression analysis and produces visualizations
 │
-├── firm_list.csv
+
+
+--NonStressNetwork.ipynb
+mint data (folder)
+------------├── firm_list.csv
 │   - List of selected firms
 │
-├── stress_days.csv
+----------├── stress_days.csv
 │   - Identified market stress days
 │
-└── stress_volatility_institutional_data2.csv
+└------ -----── stress_volatility_institutional_data2.csv
     - Combined dataset of stress-day returns and institutional ownership
-    - Not uploaded to GitHub due to file size constraints
+    - Uploaded as link due to file size constraints
+mint slides (folder)
+------------- mint 1
+--------------mint 2
+
+
+    
     
