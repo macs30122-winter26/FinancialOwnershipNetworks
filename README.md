@@ -78,6 +78,7 @@ Generated datasets stored in the repository include:
 ---
 
 # Repository Structure
+```
 final-project-mint/
 │
 ├── Data Collection and Processing/
@@ -90,7 +91,7 @@ final-project-mint/
 │   └── NonStressNetwork.ipynb
 │
 ├── Mint Data/
-│   ├── str_vol_institutional_data.csv
+│   ├── link to str_vol_institutional_data.csv
 │   ├── stress_days.csv
 │   └── firm_list.csv
 │
@@ -103,6 +104,7 @@ final-project-mint/
 │   └── Week 5 Check In.pdf
 │
 └── README.md
+```
 
 
 ### Folder descriptions
