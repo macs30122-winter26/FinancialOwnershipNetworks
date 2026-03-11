@@ -166,3 +166,9 @@ AI tools were used in limited ways to assist with formatting and coding efficien
 - Helped structure and format the project README.
 
 All analytical design, data collection, econometric analysis, and interpretation of results were completed by the author. AI tools were used only as supportive aids for formatting or minor coding assistance.
+
+---
+# Project Links
+Video Overview: https://drive.google.com/file/d/1uNLa42aFLjTOTya3f6QVltG5ghI3AYme/view?usp=sharing
+Class Slides: https://docs.google.com/presentation/d/1SoKvsnA9Tr8x61woTnffMO_tfaRs_nQcoesnPwvu77I/edit?usp=sharing
+Updated Slides: https://docs.google.com/presentation/d/1i3HPRy_XE8VvCuIUPTBcE2sTHeBaKT5hVDdb-on_lrc/edit?usp=sharing
