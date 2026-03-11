@@ -170,5 +170,7 @@ All analytical design, data collection, econometric analysis, and interpretation
 ---
 # Project Links
 Video Overview: https://drive.google.com/file/d/1uNLa42aFLjTOTya3f6QVltG5ghI3AYme/view?usp=sharing
+
 Class Slides: https://docs.google.com/presentation/d/1SoKvsnA9Tr8x61woTnffMO_tfaRs_nQcoesnPwvu77I/edit?usp=sharing
+
 Updated Slides: https://docs.google.com/presentation/d/1i3HPRy_XE8VvCuIUPTBcE2sTHeBaKT5hVDdb-on_lrc/edit?usp=sharing
